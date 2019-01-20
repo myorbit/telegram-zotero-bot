@@ -47,24 +47,24 @@ with open('allowed.json', 'r') as f:
 if os.path.isfile('config.json'):
     with open('config.json', 'r') as f:
         config = json.load(f)
-        if config['token'] == "":
+        if config['telegram']['token'] == "":
             sys.exit("No token defined. Define it in a file called config.json.")
-        if config['password'] == "":
+        if config['telegram']['password'] == "":
             print("WARNING: Empty Password for registering to use the bot." +
                   " It could be dangerous, because anybody could use this bot" +
                   " and forward messages to the channels associated to it")
-        TOKEN = config['token']
-        PASSWORD = config['password']
+        TOKEN = config['telegram']['token']
+        PASSWORD = config['telegram']['password']
         # Zotero credentials
-        if config['zotero_library_id'] == "":
+        if config['zotero']['library_id'] == "":
             sys.exit("No Zotero personal library ID defined. Define it in a file called config.json.")
-        if config['zotero_api_key'] == "":
+        if config['zotero']['api_key'] == "":
             sys.exit("No Zotero API key defined. Define it in a file called config.json")
-        if config['zotero_library_type'] == "":
+        if config['zotero']['library_type'] == "":
             print("WARNING: Empty Zotero library type. Assuming to use your own Zotero library, not a shared group library.")
-        library_type = config['zotero_library_type']
-        library_id = config['zotero_library_id']
-        api_key = config['zotero_api_key']
+        library_type = config['zotero']['library_type']
+        library_id = config['zotero']['library_id']
+        api_key = config['zotero']['api_key']
 else:
     sys.exit("No config file found. Remember changing the name of config-sample.json to config.json")
 

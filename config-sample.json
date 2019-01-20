@@ -1,7 +1,12 @@
 {
-  "password": "changeme",
-  "token": "",
-  "zotero_library_type" : "user",
-  "zotero_library_id" : "",
-  "zotero_api_key" : ""
+  "telegram": {
+    "password": "changeme",
+    "token": "",
+    "chat_title": "ZoteroStorage"
+  },
+  "zotero": {
+    "library_type" : "user",
+    "library_id" : "",
+    "api_key" : ""
+  }
 }
