@@ -14,7 +14,6 @@ from pyzotero import zotero
 # Credentials
 ## Telegram
 TOKEN = ""
-PASSWORD = "changeme"
 CHAT_TITLE = ""
 CHAT_ID = ""
 ## Zotero
@@ -28,14 +27,11 @@ if os.path.isfile('config.json'):
         config = json.load(f)
         if config['telegram']['token'] == "":
             sys.exit("No token defined. Define it in a file called config.json.")
-        if config['telegram']['password'] == "":
-            print("WARNING: Empty Password for registering to use the bot." +
-                  " It could be dangerous, because anybody could use this bot" +
-                  " and forward messages to the channels associated to it")
+        if config['telegram']['chat_title'] == "":
+            sys.exit("Empty chat title. Define it in a file called config.json.")
         if config['telegram']['chat_id'] == "":
-            print("WARNING: Empty chat id. Define it in a file called config.json.")
+            sys.exit("Empty chat id. Define it in a file called config.json.")
         TOKEN = config['telegram']['token']
-        PASSWORD = config['telegram']['password']
         CHAT_TITLE = config['telegram']['chat_title']
         CHAT_ID = int(config['telegram']['chat_id'])
         # Zotero credentials

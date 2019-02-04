@@ -1,6 +1,5 @@
 {
   "telegram": {
-    "password": "changeme",
     "token": "",
     "chat_title": "",
     "chat_id": ""
