@@ -57,15 +57,13 @@ def handle_zotero(msg):
     if 'text' not in msg:
         return "Can only add text of type 'url' to Zotero."
 
-    # ToDo: Improve parsing entities  
-    if 'entities' in msg:
-        if 'type' in msg['entities'][0]:
-            if msg['entities'][0]['type'] == "url":
-                print("Valid message of type 'url'.")
-            else:
-                print("Message not of type 'url'.")
+    if ('entities' in msg) and ('type' in msg['entities'][0]):
+        if msg['entities'][0]['type'] == "url":
+            print("Valid message of type 'url'.")
+        else:
+            return "Cannot add to Zotero. Not a message of type 'url'."
     else:
-        return "Cannot add to Zotero: Message is not of type 'url'"
+        return "Cannot add to Zotero. No message entities found."
 
     # Parse url and text from message
     url_offset = msg['entities'][0]['offset']
