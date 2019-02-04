@@ -2,7 +2,8 @@
   "telegram": {
     "password": "changeme",
     "token": "",
-    "chat_title": "ZoteroStorage"
+    "chat_title": "",
+    "chat_id": ""
   },
   "zotero": {
     "library_type" : "user",
